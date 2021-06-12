@@ -29,7 +29,7 @@ ecs_entity_t PlayerFactory(ecs_world_t* world, float X, float Y, int layer, Tile
         1.0f,
     });
     ecs_set(world, e, Animate, {
-        "protag-walk",
+        "flyman-walk",
         NULL,
         0,
         0,
@@ -41,7 +41,7 @@ ecs_entity_t PlayerFactory(ecs_world_t* world, float X, float Y, int layer, Tile
         { 0, 0, },
     });
     ecs_set(world, e, Renderable, RenderableSprite(
-        getTexture("16x16"),
+        getTexture("gmtk-2021-16x16"),
         int2dInit(0, 0),
         layer,
         0.5f,

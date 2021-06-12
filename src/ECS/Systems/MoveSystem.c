@@ -23,7 +23,7 @@ void MoveSystem(ecs_iter_t* it)
 	
 	if(keys(Pressed, v))
 	{
-		soundPlayFull("hit.ogg", 1.0f, 0.0f, 0.0f, 1.0f, false);
+		//soundPlayFull("hit.ogg", 1.0f, 0.0f, 0.0f, 1.0f, false);
 	}
 	
 	if(keys(Pressed, x))
@@ -98,6 +98,7 @@ void MoveSystem(ecs_iter_t* it)
 	if(keys(Pressed, z))
 	{
 		//soundPlay("speech0");
+		SoundInstance* s = soundPlayFull("speech0", 1.0f, 0.0f, 0.0f, 1.15f, false);
 	}
 	
 	if(keys(Pressed, c))

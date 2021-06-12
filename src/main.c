@@ -33,12 +33,10 @@ void initWorld(ecs_world_t* world)
 
 int main(int arcg, char* argv[])
 {
-    configDefault(config, 1280, 720, "en", true);
-    
-    //printf("M: %f\nS: %f\nM: %f\n", config.volumeMaster, config.volumeSFX, config.volumeMusic);
+    configDefault(config, 1280 * 2, 720 * 2, "en", true);
     
     init(
-        "Engine Test",
+        "GMTK 2021: The Butterfly Effect",
         "v1.0.0",
         "OpenGL",
         60,
@@ -46,7 +44,7 @@ int main(int arcg, char* argv[])
         320, 180,
         1024, 1024,
         initWorld,
-        "map1",
+        "map0",
         RSZ_Floor
     );
     
@@ -65,10 +63,9 @@ int main(int arcg, char* argv[])
         scene(init2)
     );
     
-    /* RESOURCES */
-    
     textures(
-        2,
+        3,
+        Texture_Create(&app, "gmtk-2021-16x16", 16, 16, 0, 0, 0, 0),
         Texture_Create(&app, "16x16", 16, 16, 0, 0, 0, 0),
         Texture_Create(&app, "8x8", 8, 8, 0, 0, 0, 0)
     );
@@ -93,23 +90,20 @@ int main(int arcg, char* argv[])
     
     fonts(
         2,
-        Font_Create(&app, "BloodySlime/BloodySlime.ttf"),
+        Font_Create(&app, "Bloodyslime/Bloodyslime.ttf"),
         Font_Create(&app, "PressStart2P/PressStart2P.ttf")
     );
     
     sounds(
         4,
-        Sound_create_load(),
-        Sound_create_load(),
-            );
-    
-    /* RESOURCES */
-    
-    sounds(
-        4,
         Sound_create_load("calm-example.ogg", Play_StopAll, SoundCategory_Music),
         Sound_create_load("hit.ogg", Play_StopOne, SoundCategory_SFX),
-        Sound_create_speech("speech0", "Uncompromised", Play_Default, SoundCategory_SFX),
+        Sound_create_speech(
+            "speech0",
+            "the destruction that way steth at noonday.",
+            Play_Default,
+            SoundCategory_SFX
+        ),
         Sound_create_sfxr("sfxr", Play_Default, SoundCategory_SFX)
     );
     
