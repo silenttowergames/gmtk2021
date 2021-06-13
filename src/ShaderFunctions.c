@@ -7,7 +7,7 @@ void ShaderUpdate_Disable(void* _app, void* _renderTarget, void* _shader)
     
     if(keys(Pressed, s))
     {
-        shader->disabled = !shader->disabled;
+        //shader->disabled = !shader->disabled;
     }
     
     Shader_ParamCopy(shader, "Width", &renderTarget->size.X, sizeof(int));

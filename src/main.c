@@ -27,6 +27,8 @@ void initWorld(ecs_world_t* world)
     ECS_SYSTEM(world, CameraFollowSystem, EcsOnUpdate, Body, CameraFollow, Renderable);
     ECS_SYSTEM(world, DepthSystem, EcsOnUpdate, Body, Renderable);
     ECS_SYSTEM(world, AnimateSystem, EcsOnUpdate, Animate, Renderable);
+    ECS_SYSTEM(world, CrosshairSystem, EcsOnUpdate, Animate, Body, Crosshair);
+    ECS_SYSTEM(world, FlipSpritesSystem, EcsOnUpdate, Body, Renderable);
     
     DrawSystem_Init();
 }
@@ -108,7 +110,8 @@ int main(int arcg, char* argv[])
     );
     
     factories(
-        4,
+        5,
+        factory(Bullet),
         factory(Player),
         factory(NPC),
         factory(TextBox),

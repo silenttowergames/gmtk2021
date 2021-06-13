@@ -87,6 +87,16 @@
         "movesystem.h": "c",
         "factory.h": "c",
         "scenefunctions.h": "c",
-        "shaderfunctions.h": "c"
+        "shaderfunctions.h": "c",
+        "mousestate.h": "c",
+        "mousebuttons.h": "c",
+        "flipspritessystem.h": "c",
+        "gamepadstatefunctions.h": "c",
+        "gamepadbuttonsfunctions.h": "c",
+        "gamepadbuttons.h": "c",
+        "gamepadstate.h": "c",
+        "sdl.h": "c",
+        "math.h": "c",
+        "bulletfactory.h": "c"
     }
 }

@@ -13,6 +13,7 @@
     STE_ECS_COMPONENT_ ## de(w, BasicAABB);\
     STE_ECS_COMPONENT_ ## de(w, Body);\
     STE_ECS_COMPONENT_ ## de(w, CameraFollow);\
+    STE_ECS_COMPONENT_ ## de(w, Crosshair);\
     STE_ECS_COMPONENT_ ## de(w, Menu);\
     STE_ECS_COMPONENT_ ## de(w, MenuItem);\
     STE_ECS_COMPONENT_ ## de(w, PauseMenu);\

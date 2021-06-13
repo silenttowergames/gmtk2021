@@ -21,37 +21,6 @@ void MoveSystem(ecs_iter_t* it)
 {
 	fctx();
 	
-	if(keys(Pressed, v))
-	{
-		//soundPlayFull("hit.ogg", 1.0f, 0.0f, 0.0f, 1.0f, false);
-	}
-	
-	if(keys(Pressed, x))
-	{
-		//ecs_set_time_scale(it->world, 1);
-		//app->flecsScene = "map1";
-	}
-	
-	if(keys(Pressed, u))
-	{
-		//ecs_set_time_scale(it->world, 2);
-	}
-	
-	if(keys(Pressed, i))
-	{
-		//ecs_set_time_scale(it->world, 0.5f);
-	}
-	
-	if(keys(Pressed, o))
-	{
-		//ecs_set_time_scale(it->world, 5);
-	}
-	
-	if(keys(Pressed, p))
-	{
-		//ecs_set_time_scale(it->world, 0.125f);
-	}
-	
 	AIPlayer* a = ecs_column(it, AIPlayer, 1);
 	Body* b = ecs_column(it, Body, 2);
 	
@@ -59,65 +28,24 @@ void MoveSystem(ecs_iter_t* it)
 	{
 		memset(&b[i].velocity, 0, sizeof(float2d));
 		
-		if(keys(Down, RIGHT) || button(Down, 0, DPAD_RIGHT) || button(Down, 0, STICK_LEFT_RIGHT))
+		if(keys(Down, RIGHT) || keys(Down, d) || button(Down, 0, DPAD_RIGHT) || button(Down, 0, STICK_LEFT_RIGHT))
 		{
 			b[i].velocity.X += a[i].speed;
 		}
 		
-		if(keys(Down, LEFT) || button(Down, 0, DPAD_LEFT) || button(Down, 0, STICK_LEFT_LEFT))
+		if(keys(Down, LEFT) || keys(Down, a) || button(Down, 0, DPAD_LEFT) || button(Down, 0, STICK_LEFT_LEFT))
 		{
 			b[i].velocity.X -= a[i].speed;
 		}
 		
-		if(keys(Down, DOWN) || button(Down, 0, DPAD_DOWN) || button(Down, 0, STICK_LEFT_DOWN))
+		if(keys(Down, DOWN) || keys(Down, s) || button(Down, 0, DPAD_DOWN) || button(Down, 0, STICK_LEFT_DOWN))
 		{
 			b[i].velocity.Y += a[i].speed;
 		}
 		
-		if(keys(Down, UP) || button(Down, 0, DPAD_UP) || button(Down, 0, STICK_LEFT_UP))
+		if(keys(Down, UP) || keys(Down, w) || button(Down, 0, DPAD_UP) || button(Down, 0, STICK_LEFT_UP))
 		{
 			b[i].velocity.Y -= a[i].speed;
 		}
-		
-		if(button(Pressed, 0, X))
-		{
-			rumble(0, 0xFFFF, 0xFFFF, 500);
-		}
-		
-		if(button(Released, 1, X))
-		{
-			rumble(1, 0xFFFF, 0xFFFF, 500);
-		}
-	}
-	
-	if(keys(Pressed, x))
-	{
-		//soundPlay("calm-example.ogg");
-	}
-	
-	if(keys(Pressed, z))
-	{
-		//soundPlay("speech0");
-		SoundInstance* s = soundPlayFull("speech0", 1.0f, 0.0f, 0.0f, 1.15f, false);
-	}
-	
-	if(keys(Pressed, c))
-	{
-		//soundPlay("hit.ogg");
-	}
-	
-	if(keys(Pressed, v))
-	{
-		//app->flecsScene = "map1";
-	}
-	
-	if(keys(Pressed, g))
-	{
-		//RenderState_VSync(app, true);
-	}
-	
-	if(keys(Pressed, h))
-	{
-		//RenderState_VSync(app, false);
 	}
 }
