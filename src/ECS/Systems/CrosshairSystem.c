@@ -16,6 +16,11 @@ void CrosshairSystem(ecs_iter_t* it)
 {
     fctx();
     
+    if(CrosshairSystem_Query_Player == NULL)
+    {
+        CrosshairSystem_Query_Player = ecs_query_new(app->world, "AIPlayer,Animate,Body");
+    }
+    
     //SDL_SetWindowGrab(app->renderState.window, SDL_TRUE);
     //SDL_ShowCursor(0);
     
@@ -57,6 +62,16 @@ void CrosshairSystem(ecs_iter_t* it)
                     .X = axis(0, STICK_RIGHT_RIGHT),
                     .Y = axis(0, STICK_RIGHT_DOWN),
                 };
+                
+                if(fabs(stickMove.X) < 0.5f)
+                {
+                    stickMove.X = 0;
+                }
+                
+                if(fabs(stickMove.Y) < 0.5f)
+                {
+                    stickMove.Y = 0;
+                }
             }
             else
             {
@@ -64,16 +79,16 @@ void CrosshairSystem(ecs_iter_t* it)
                     .X = axis(0, STICK_LEFT_RIGHT),
                     .Y = axis(0, STICK_LEFT_DOWN),
                 };
-            }
-            
-            if(fabs(stickMove.X) < 0.15f)
-            {
-                stickMove.X = 0;
-            }
-            
-            if(fabs(stickMove.Y) < 0.15f)
-            {
-                stickMove.Y = 0;
+                
+                if(fabs(stickMove.X) < 0.15f)
+                {
+                    stickMove.X = 0;
+                }
+                
+                if(fabs(stickMove.Y) < 0.15f)
+                {
+                    stickMove.Y = 0;
+                }
             }
             
             if(stickMove.X != 0 || stickMove.Y != 0)

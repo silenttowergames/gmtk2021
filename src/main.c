@@ -27,7 +27,9 @@ void initWorld(ecs_world_t* world)
     ECS_SYSTEM(world, CameraFollowSystem, EcsOnUpdate, Body, CameraFollow, Renderable);
     ECS_SYSTEM(world, DepthSystem, EcsOnUpdate, Body, Renderable);
     ECS_SYSTEM(world, AnimateSystem, EcsOnUpdate, Animate, Renderable);
-    ECS_SYSTEM(world, CrosshairSystem, EcsOnUpdate, Animate, Body, Crosshair);
+    
+    CrosshairSystem_Declare();
+    
     ECS_SYSTEM(world, FlipSpritesSystem, EcsOnUpdate, Body, Renderable);
     
     DrawSystem_Init();

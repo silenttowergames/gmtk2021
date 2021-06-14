@@ -11,6 +11,8 @@
 #include "ECS/Entities/TextBoxFactory.h"
 
 #include "ECS/Systems/AINPCSystem.h"
+#define CROSSHAIRSYSTEM_FINAL
+#include "ECS/Systems/CrosshairSystemExtern.h"
 #include "ECS/Systems/CrosshairSystem.h"
 #include "ECS/Systems/FlipSpritesSystem.h"
 #include "ECS/Systems/MoveSystem.h"

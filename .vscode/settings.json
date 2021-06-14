@@ -97,6 +97,7 @@
         "gamepadstate.h": "c",
         "sdl.h": "c",
         "math.h": "c",
-        "bulletfactory.h": "c"
+        "bulletfactory.h": "c",
+        "crosshairsystem.h": "c"
     }
 }
